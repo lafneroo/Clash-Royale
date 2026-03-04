@@ -26,16 +26,16 @@
 
 <div align="center">
   <a href="https://github.com/Gabryelf"><img src="https://github.com/Gabryelf.png" width="50" style="border-radius: 50%;"></a>
-  <a href="https://github.com/AnaliniDebozhir228"><img src="https://github.com/AnaliniDebozhir228.png" width="50" style="border-radius: 50%;"></a>
-  <a href="https://github.com/AndMarc-rpo251"><img src="https://github.com/AndMarc-rpo251.png" width="50" style="border-radius: 50%;"></a>
-  <a href="https://github.com/Artijetsu"><img src="https://github.com/Artijetsu.png" width="50" style="border-radius: 50%;"></a>
-  <a href="https://github.com/Sativ"><img src="https://github.com/Sativ.png" width="50" style="border-radius: 50%;"></a>
-  <a href="https://github.com/kirilmaslenok-stack"><img src="https://github.com/kirilmaslenok-stack.png" width="50" style="border-radius: 50%;"></a>
-  <a href="https://github.com/kpe4"><img src="https://github.com/kpe4.png" width="50" style="border-radius: 50%;"></a>
-  <a href="https://github.com/Leksiin"><img src="https://github.com/Leksiin.png" width="50" style="border-radius: 50%;"></a>
-  <a href="https://github.com/muesimka"><img src="https://github.com/muesimka.png" width="50" style="border-radius: 50%;"></a>
-  <a href="https://github.com/nktnvrvskj"><img src="https://github.com/nktnvrvskj.png" width="50" style="border-radius: 50%;"></a>
-  <a href="https://github.com/gearencore"><img src="https://github.com/gearencore.png" width="50" style="border-radius: 50%;"></a>
+  <a href="https://github.com/SigmaLigmaBalls"><img src="https://github.com/SigmaLigmaBalls.png" width="50" style="border-radius: 50%;"></a>
+  <a href="https://github.com/dimasik2281488"><img src="https://github.com/dimasik2281488.png" width="50" style="border-radius: 50%;"></a>
+  <a href="https://github.com/ha_skule1"><img src="https://github.com/ha_skule1.png" width="50" style="border-radius: 50%;"></a>
+  <a href="https://github.com/lafneroo"><img src="https://github.com/lafneroo.png" width="50" style="border-radius: 50%;"></a>
+  <a href="https://github.com/Pochtovyaschik"><img src="https://github.com/Pochtovyaschik.png" width="50" style="border-radius: 50%;"></a>
+  <a href="https://github.com/nebowork"><img src="https://github.com/nebowork.png" width="50" style="border-radius: 50%;"></a>
+  <a href="https://github.com/prosto73"><img src="https://github.com/prosto73.png" width="50" style="border-radius: 50%;"></a>
+  <a href="https://github.com/sofiya-svishch13"><img src="https://github.com/sofiya-svishch13.png" width="50" style="border-radius: 50%;"></a>
+  <a href="https://github.com/ssHIMAN0"><img src="https://github.com/ssHIMAN0.png" width="50" style="border-radius: 50%;"></a>
+  <a href="https://github.com/t1mch1k12"><img src="https://github.com/t1mch1k12.png" width="50" style="border-radius: 50%;"></a>
 </div>
 
 > [!IMPORTANT]
