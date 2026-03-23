@@ -103,5 +103,4 @@ window.AI = {
         this.gameStartTime = 0;
     }
 };
-<script src="js/state.js"></script>
-<script src="js/ai.js"></script>
+
