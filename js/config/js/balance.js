@@ -1,6 +1,6 @@
 // Balance Module - настройки баланса игры
 window.Balance = {
-    // Статы юнитов
+    // Статы юнитовd
     units: {
         knight: {
             name: 'Knight',
