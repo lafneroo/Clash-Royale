@@ -9,7 +9,7 @@ window.CONFIG = {
         archer: 'assets/images/units/archer.png',
         mage: 'assets/images/units/mage.png',
         playerTower: 'assets/images/towers/player_tower.png',
-        enemyTower: '/assets/images/towers/enemy_tower.png',
+        enemyTower: 'assets/images/towers/enemy_tower.png',
         kingTower: 'assets/images/towers/player_tower.png'
     },
     
