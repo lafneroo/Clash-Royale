@@ -1,14 +1,31 @@
-<canvas id="gameCanvas" width="800" height="600" style="border:1px solid black;"></canvas>
 
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
-
-function gameLoop() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+// ГЛАВНЫЙ ЦИКЛ - запуск и отрисовка
+(function() {
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
     
-    // Здесь будут вызовы
+    Graphics.init(ctx);
+    UI.init(canvas);
+    GameState.startBattle();
     
-    requestAnimationFrame(gameLoop);
-}
+    function render() {
+        Graphics.drawArena();
+        Graphics.drawPlayerTower();
+        Graphics.drawEnemyTower();
+        Graphics.drawKingTower(true);
+        Graphics.drawKingTower(false);
+        Graphics.drawUI();
+        
+        // Рисуем юнитов
+        const units = GameState.getUnits();
+        for (let i = 0; i < units.length; i++) {
+            Graphics.drawUnit(units[i]);
+        }
+        
+        requestAnimationFrame(render);
+    }
+    
+    render();
+    console.log('Stage 1: Game initialized - static graphics ready');
+})();
 
-gameLoop();
