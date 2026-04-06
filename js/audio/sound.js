@@ -1,32 +1,57 @@
-// ========== SOUND MODULE ==========
-// SOUND - звуковые эффекты
-window.SoundFX = {
-    sounds: {},
-    enabled: true,
+// ============================================================
+// sound.js - Звуковые эффекты (класс)
+// ============================================================
+
+class SoundFX {
+    constructor() {
+        this.sounds = {};
+        this.enabled = true;
+        this.loadAllSounds();
+    }
     
-    init: function() {
-        // Загружаем все звуки из конфига
-        for (let key in CONFIG.SOUNDS) {
+    loadAllSounds() {
+        const soundPaths = window.CONFIG?.SOUNDS || {};
+        for (let key in soundPaths) {
             const audio = new Audio();
-            audio.src = CONFIG.SOUNDS[key];
+            audio.src = soundPaths[key];
             audio.preload = 'auto';
             this.sounds[key] = audio;
-            console.log(`Loaded sound: ${key} -> ${CONFIG.SOUNDS[key]}`);
         }
-    },
+        console.log('✅ Все звуки загружены');
+    }
     
-    play: function(soundName) {
+    play(soundName) {
         if (!this.enabled) return;
         const sound = this.sounds[soundName];
         if (sound) {
             sound.currentTime = 0;
-            sound.play().catch(e => console.log(`Sound ${soundName} blocked`));
-        } else {
-            console.log(`Sound ${soundName} not found`);
+            sound.play().catch(e => console.log(`🔇 Звук ${soundName} заблокирован`));
         }
-    },
+    }
     
-    setEnabled: function(value) {
+    playDeploy() {
+        this.play('deploy');
+    }
+    
+    playHit() {
+        this.play('hit');
+    }
+    
+    playTowerHit() {
+        this.play('towerHit');
+    }
+    
+    playVictory() {
+        this.play('victory');
+    }
+    
+    playDefeat() {
+        this.play('defeat');
+    }
+    
+    setEnabled(value) {
         this.enabled = value;
     }
-};
+}
+
+window.SoundFX = null;
