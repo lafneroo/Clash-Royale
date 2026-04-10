@@ -43,11 +43,9 @@ window.CONFIG = {
             enemyKing: { x: 450, y: 100, maxHp: 3000, damage: 70, range: 120 }
         }
     },
-    
-    CARDS: {
 
-        // Карты
-        knight: {
+    // Карты
+    CARDS: {
             // Рыцарь
         knight: {
             name: 'Рыцарь',
@@ -86,6 +84,5 @@ window.CONFIG = {
             attackSpeed: 1.5,
             description: 'Мощная магическая атака',
             rarity: 'rare'
-        }
     }
 };
