@@ -4,6 +4,7 @@
 
 window.CONFIG = {
     IMAGES: {
+        // Арена и ландшафт
         path: 'assets/images/arena/path.png',
         grass: 'assets/images/arena/grass.png',
         river: 'assets/images/arena/river.png',
@@ -16,6 +17,7 @@ window.CONFIG = {
     },
     
     SOUNDS: {
+        // Игровые эффекты
         deploy: 'assets/sounds/deploy.mp3',
         hit: 'assets/sounds/hit.mp3',
         towerHit: 'assets/sounds/tower_hit.mp3',
@@ -24,6 +26,7 @@ window.CONFIG = {
     },
     
     GAME: {
+        // Игра
         width: 900,
         height: 600,
         maxElixir: 10,
@@ -31,6 +34,7 @@ window.CONFIG = {
         elixirRegenRate: 2.8, // секунды на 1 эликсир
         
         towers: {
+            // Башни
             playerLeft: { x: 150, y: 450, maxHp: 1500, damage: 50, range: 100 },
             playerRight: { x: 750, y: 450, maxHp: 1500, damage: 50, range: 100 },
             playerKing: { x: 450, y: 500, maxHp: 3000, damage: 70, range: 120 },
@@ -41,6 +45,10 @@ window.CONFIG = {
     },
     
     CARDS: {
+
+        // Карты
+        knight: {
+            // Рыцарь
         knight: {
             name: 'Рыцарь',
             cost: 3,
@@ -54,6 +62,7 @@ window.CONFIG = {
             rarity: 'common'
         },
         archer: {
+            // Лучник
             name: 'Лучница',
             cost: 3,
             unitType: 'archer',
@@ -66,6 +75,7 @@ window.CONFIG = {
             rarity: 'common'
         },
         mage: {
+            // Маг
             name: 'Маг',
             cost: 4,
             unitType: 'mage',
