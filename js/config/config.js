@@ -16,9 +16,9 @@ window.CONFIG = {
     },
     
     SOUNDS: {
-        deploy: 'assets/sounds/click.mp3,
-        hit: 'assets/sounds/click.mp3,
-        towerHit: 'assets/sounds/click.mp3,  
+        deploy: 'assets/sounds/click.mp3',
+        hit: 'assets/sounds/click.mp3',
+        towerHit: 'assets/sounds/click.mp3',  
         victory: 'assets/sounds/victory.mp3',
         defeat: 'assets/sounds/defeat.mp3'
     },
