@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     console.log('🎮 Игра запущена!');
   
-    SoundFX.init();
     GameState.startBattle();
     Core.startLoop();
     
