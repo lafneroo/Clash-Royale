@@ -32,11 +32,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     console.log('🎮 Игра запущена!');
     
-    // НЕ вызываем gameState.startBattle() - уже вызвано в core.init()
-    // НЕ вызываем core.startLoop() - уже вызвано в core.init()
-    
-    // Убираем старую функцию render() - используем рендер из Core
-    
     // Обработка кликов по картам
     canvas.addEventListener('click', (e) => {
         if (!core.gameState.isActive) return;
