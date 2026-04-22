@@ -58,11 +58,49 @@
         const width = window.CONFIG.GAME.width;
         const height = window.CONFIG.GAME.height;
         
+        // Фон - трава
         this.drawTiledImage('grass', 0, 0, width, height, 50, 50);
-        this.drawPath(150, 450, 150, 150, 60);
-        this.drawPath(750, 450, 750, 150, 60);
-        this.drawPath(450, 500, 450, 100, 50);
+        
+        // ЛЕВАЯ ДОРОЖКА с мостом
+        // От левой башни игрока до моста
+        this.drawPath(150, 450, 150, 350, 60);
+        // Мост через реку
+        this.drawBridge(150, 300);
+        // От моста до левой башни врага
+        this.drawPath(150, 250, 150, 150, 60);
+        
+        // ПРАВАЯ ДОРОЖКА с мостом
+        // От правой башни игрока до моста
+        this.drawPath(750, 450, 750, 350, 60);
+        // Мост через реку
+        this.drawBridge(750, 300);
+        // От моста до правой башни врага
+        this.drawPath(750, 250, 750, 150, 60);
+        
+        // НЕТ центральной дорожки от королевской башни!
+        
+        // Река
         this.drawRiver();
+    }
+    
+    drawBridge(x, y) {
+        const bridgeWidth = 60;
+        const bridgeHeight = 25;
+        
+        // Основание моста
+        this.ctx.fillStyle = '#8B5A2B';
+        this.ctx.fillRect(x - bridgeWidth/2, y, bridgeWidth, bridgeHeight);
+        
+        // Деревянные доски
+        this.ctx.fillStyle = '#A06B3A';
+        for (let i = 0; i < 5; i++) {
+            this.ctx.fillRect(x - bridgeWidth/2 + 5 + i * 10, y + 5, 6, 15);
+        }
+        
+        // Перила
+        this.ctx.fillStyle = '#6B3A1B';
+        this.ctx.fillRect(x - bridgeWidth/2, y, 4, bridgeHeight);
+        this.ctx.fillRect(x + bridgeWidth/2 - 4, y, 4, bridgeHeight);
     }
     
     drawPath(startX, startY, endX, endY, width) {
