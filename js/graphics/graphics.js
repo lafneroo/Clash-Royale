@@ -83,26 +83,6 @@
         this.drawRiver();
     }
     
-    drawBridge(x, y) {
-        const bridgeWidth = 60;
-        const bridgeHeight = 25;
-        
-        // Основание моста
-        this.ctx.fillStyle = '#8B5A2B';
-        this.ctx.fillRect(x - bridgeWidth/2, y, bridgeWidth, bridgeHeight);
-        
-        // Деревянные доски
-        this.ctx.fillStyle = '#A06B3A';
-        for (let i = 0; i < 5; i++) {
-            this.ctx.fillRect(x - bridgeWidth/2 + 5 + i * 10, y + 5, 6, 15);
-        }
-        
-        // Перила
-        this.ctx.fillStyle = '#6B3A1B';
-        this.ctx.fillRect(x - bridgeWidth/2, y, 4, bridgeHeight);
-        this.ctx.fillRect(x + bridgeWidth/2 - 4, y, 4, bridgeHeight);
-    }
-    
     drawPath(startX, startY, endX, endY, width) {
         this.ctx.save();
         const dx = endX - startX;
@@ -129,6 +109,26 @@
             const waveY = Math.sin(this.waterOffset + i * 0.5) * 3;
             this.ctx.fillRect(40 + i * 70, centerY - 5 + waveY, 35, 4);
         }
+    }
+
+    drawBridge(x, y) {
+        const bridgeWidth = 60;
+        const bridgeHeight = 25;
+        
+        // Основание моста
+        this.ctx.fillStyle = '#8B5A2B';
+        this.ctx.fillRect(x - bridgeWidth/2, y, bridgeWidth, bridgeHeight);
+        
+        // Деревянные доски
+        this.ctx.fillStyle = '#A06B3A';
+        for (let i = 0; i < 5; i++) {
+            this.ctx.fillRect(x - bridgeWidth/2 + 5 + i * 10, y + 5, 6, 15);
+        }
+        
+        // Перила
+        this.ctx.fillStyle = '#6B3A1B';
+        this.ctx.fillRect(x - bridgeWidth/2, y, 4, bridgeHeight);
+        this.ctx.fillRect(x + bridgeWidth/2 - 4, y, 4, bridgeHeight);
     }
     
     drawTower(tower, isPlayer) {
