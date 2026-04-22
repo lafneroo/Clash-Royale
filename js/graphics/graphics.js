@@ -117,18 +117,21 @@
     }
     
     drawRiver() {
-        const width = window.CONFIG.GAME.width;
-        const centerY = window.CONFIG.GAME.height / 2;
-        const riverWidth = 25;
+    const width = window.CONFIG.GAME.width;
+    const centerY = window.CONFIG.GAME.height / 2;
+    const riverWidth = 30;
     
-        this.waterOffset = (this.waterOffset + 0.02) % (Math.PI * 2);
-        this.drawTiledImage('river', 0, centerY - riverWidth/2, width, riverWidth, 50, riverWidth);
+    // Анимация воды
+    this.waterOffset = (this.waterOffset + 0.02) % (Math.PI * 2);
     
-        this.ctx.fillStyle = 'rgba(100, 200, 255, 0.4)';
-        for (let i = 0; i < 12; i++) {
-            const waveY = Math.sin(this.waterOffset + i * 0.5) * 3;
-            this.ctx.fillRect(40 + i * 70, centerY - 5 + waveY, 35, 4);
-        }
+    // Река
+    this.drawTiledImage('river', 0, centerY - riverWidth/2, width, riverWidth, 50, riverWidth);
+    
+    // Блики
+    this.ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+    for (let i = 0; i < 15; i++) {
+        const waveY = Math.sin(this.waterOffset + i * 0.5) * 4;
+        this.ctx.fillRect(30 + i * 60, centerY - 3 + waveY, 25, 3);
     }
     
     drawTower(tower, isPlayer) {
@@ -155,19 +158,26 @@
     }
     
     drawKingTower(tower, isPlayer = true) {
-        if (!tower || tower.hp <= 0) return;
-        const imgKey = isPlayer ? 'kingTower' : 'kingEnemyTower';
+        if (!tower) return;
+        
+        const isDestroyed = tower.hp <= 0;
+        const imgKey = isDestroyed 
+            ? (isPlayer ? 'kingTowerDestroyed' : 'kingEnemyTowerDestroyed')
+            : (isPlayer ? 'kingTower' : 'kingEnemyTower');
+        
         this.drawImage(imgKey, tower.x - 40, tower.y - 50, 80, 90);
         
-        const percent = tower.hp / tower.maxHp;
-        this.ctx.fillStyle = '#aa2e2e';
-        this.ctx.fillRect(tower.x - 35, tower.y - 60, 70, 6);
-        this.ctx.fillStyle = '#4eff6e';
-        this.ctx.fillRect(tower.x - 35, tower.y - 60, 70 * percent, 6);
-        
-        this.ctx.fillStyle = 'white';
-        this.ctx.font = 'bold 10px monospace';
-        this.ctx.fillText(`❤️ ${Math.floor(tower.hp)}`, tower.x - 20, tower.y - 63);
+        if (!isDestroyed) {
+            const percent = tower.hp / tower.maxHp;
+            this.ctx.fillStyle = '#aa2e2e';
+            this.ctx.fillRect(tower.x - 35, tower.y - 60, 70, 6);
+            this.ctx.fillStyle = '#4eff6e';
+            this.ctx.fillRect(tower.x - 35, tower.y - 60, 70 * percent, 6);
+            
+            this.ctx.fillStyle = 'white';
+            this.ctx.font = 'bold 10px monospace';
+            this.ctx.fillText(`❤️ ${Math.floor(tower.hp)}`, tower.x - 20, tower.y - 63);
+        }
     }
     
     drawUnit(unit) {
