@@ -108,12 +108,14 @@
         for (let i = 0; i < 15; i++) {
             const waveY = Math.sin(this.waterOffset + i * 0.5) * 4;
             this.ctx.fillRect(30 + i * 60, centerY - 3 + waveY, 25, 3);
+        }
 
          // Волны
         for (let i = 0; i < 20; i++) {
             const waveY = Math.sin(this.waterOffset + i * 0.3) * 3;
             this.ctx.fillStyle = `rgba(255, 255, 255, ${0.2 + Math.sin(this.waterOffset) * 0.1})`;
             this.ctx.fillRect(30 + i * 40, centerY - 3 + waveY, 25, 2);
+        }
     }
 
     drawBridge(x, y) {
@@ -137,6 +139,22 @@
     }
     
     drawTower(tower, isPlayer) {
+        if (tower.hp <= 0) {
+            // Рисуем обломки
+            this.ctx.fillStyle = '#5a4a3a';
+            for (let i = 0; i < 15; i++) {
+                this.ctx.fillRect(
+                    tower.x - 25 + Math.random() * 50,
+                    tower.y - 30 + Math.random() * 60,
+                    4 + Math.random() * 8,
+                    4 + Math.random() * 8
+                );
+            }
+            this.ctx.fillStyle = '#ff4444';
+            this.ctx.font = 'bold 14px monospace';
+            this.ctx.fillText('💀', tower.x - 10, tower.y - 20);
+            return;
+        }
         if (!tower) return;
         
         const isDestroyed = tower.hp <= 0;
@@ -221,8 +239,17 @@
             const startY = window.CONFIG.GAME.height - 100;
             
             console.log(`Drawing ${deck.hand.length} cards at y=${startY}`);
-            
+         
             for (let i = 0; i < deck.hand.length; i++) {
+                if (isSelected) {
+                        // Золотая рамка
+                        this.ctx.shadowBlur = 15;
+                        this.ctx.shadowColor = '#ffd700';
+                        this.ctx.strokeStyle = '#ffd700';
+                        this.ctx.lineWidth = 3;
+                        this.ctx.strokeRect(x - 3, startY - 3, cardWidth + 6, cardHeight + 6);
+                        this.ctx.shadowBlur = 0;
+                    }
                 const card = deck.hand[i];
                 const x = startX + i * (cardWidth + 10);
                 const isSelected = (ui && ui.isPlacingMode && ui.selectedCardIndex === i);
