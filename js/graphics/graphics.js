@@ -242,14 +242,14 @@
          
             for (let i = 0; i < deck.hand.length; i++) {
                 if (isSelected) {
-                    // Золотая рамка
-                    this.ctx.shadowBlur = 15;
-                    this.ctx.shadowColor = '#ffd700';
-                    this.ctx.strokeStyle = '#ffd700';
-                    this.ctx.lineWidth = 3;
-                    this.ctx.strokeRect(x - 3, startY - 3, cardWidth + 6, cardHeight + 6);
-                    this.ctx.shadowBlur = 0;
-                }
+                        // Золотая рамка
+                        this.ctx.shadowBlur = 15;
+                        this.ctx.shadowColor = '#ffd700';
+                        this.ctx.strokeStyle = '#ffd700';
+                        this.ctx.lineWidth = 3;
+                        this.ctx.strokeRect(x - 3, startY - 3, cardWidth + 6, cardHeight + 6);
+                        this.ctx.shadowBlur = 0;
+                    }
                 const card = deck.hand[i];
                 const x = startX + i * (cardWidth + 10);
                 const isSelected = (ui && ui.isPlacingMode && ui.selectedCardIndex === i);
